@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Virz</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+		<script type="text/javascript" language="javascript" src="jquery-1.8.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="jquery.carouFredSel-6.2.0-packed.js"></script>
+		
+		
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" language="javascript" src="helper-plugins/jquery.touchSwipe.min.js"></script>
+		<script src="jquery.touchwipe.1.1.1.js"></script>
+
+
+<script src="scroll.js"></script>
+<script src="slider.js"></script>
+
+<script type="text/javascript">
+$(function(){
+        $('.menu').totemticker({
+                row_height :    '35px',
+                next :  '#ticker-next', // id элемента
+                previous :      '#ticker-previous', // id элемента
+                stop :  '#stop', // id элемента
+                start : '#start', // id элемента
+                mousestop :     false, // останавливать ли движение при наведении мышки
+                speed :   300, // скорость прокрутки
+                interval :      1000, // пауза между перемещениями элементов
+        });
+		
+		var margintop = 0;
+		$('.menu')
+					.mousewheel(function(event, delta, deltaX, deltaY) {
+						/*var o = '';
+						if (delta > 0)
+							o = '#test2: up ('+delta+')';
+						else if (delta < 0)
+							o = '#test2: down ('+delta+')';
+						
+						if (deltaX > 0)
+							o = o + ', east ('+deltaX+')';
+						else if (deltaX < 0)
+							o = o + ', west ('+deltaX+')';*/
+						
+						if ( deltaY > 0 ){
+							 //margintop -= 60;
+							 //$('.menu').animate({'marginTop':margintop});
+							 upppfunction();
+						}
+						else if ( deltaY < 0 ){
+							downnnfunction();
+							} 		    
+					    event.stopPropagation();
+						event.preventDefault();
+						
+						/*if( o != '' )
+							log( o );*/
+						return false; // prevent default
+					});
+		
+		
+		$(".menu").touchwipe({
+		 wipeUp: function() { upppfunction(); },
+		 wipeDown: function() { downnnfunction(); },
+		 min_move_x: 20,
+		 min_move_y: 20,
+		 preventDefaultEvents: true
+		});
+		
+		
+		$('#mycarousel').carouFredSel({
+					auto: false,
+					prev: '#prev_btn',
+					next: '#next_btn',
+					scroll: 1,
+					mousewheel: true,
+					swipe: {
+						onMouse: true,
+						onTouch: true
+					}
+				});
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+	
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+<div class="top">
+  <div class="container">
+    <div class="logo"><a href="#"><img src="images/logo.jpg"></a></div>
+    <div class="lang"> 
+    <a href="#"><img src="images/l1.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l2.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l3.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l4.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l5.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l6.png" width="16" height="11"></a>
+    <a href="#"><img src="images/l7.png" width="16" height="11"></a>
+    </div>
+    
+  </div>
+</div>
+<div class="container">
+
+  
+
+  <div class="slidercont">
+    <div id="slider">
+        <img src="images/slider1.jpg" class="img2">
+        <img src="images/slider1.jpg" class="img2">
+        <img src="images/slider1.jpg" class="img2">
+        <img src="images/slider1.jpg" class="img2">
+      </div>
+  </div>
+  <div class="slidercontrols"></div>
+  <div class="clear"></div>
+  
+  <div class="mainmenu">
+	<ul class="menu">
+	  <li id="item1"><a href="#">home</a></li>
+	  <li><a href="#">Rings <br>piston</a></li>
+	  <li><a href="#">Shafts <br>geniculate</a></li>
+	  <li><a href="#">Candles <br>ignition</a></li>
+	  <li><a href="#">Starting <br>mechanism</a></li>
+	 <li><a href="#">Rims and <br>braking system</a></li>
+	 <li><a href="#">Filters <br>air</a></li>
+	</ul>
+  </div>
+  <a href="#" class="moto2">Moto Accessories</a>
+  <div class="scroller">
+    <img src="images/up.jpg" width="16" height="10" id="ticker-previous"> 
+    <img src="images/down.jpg" width="16" height="10" id="ticker-next"> 
+  </div> 
+  <div class="clear"></div>
+  
+<div class="list_carousel">
+				<ul id="mycarousel" >
+			<li>
+			<img src="images/item1.jpg" width="96" height="96"> 
+			<a href="#">Муфта обгонная DELTA ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item2.jpg" width="96" height="96"> 
+			<a href="#">Цепь привода
+		эектростарстера DELTA
+		ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item3.jpg" width="96" height="96"> 
+			<a href="#">Сцепление DELTA<br>
+		ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item1.jpg" width="96" height="96"> 
+			<a href="#">Вал пусковой в сборе
+		DELTA ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item2.jpg" width="96" height="96"> 
+			<a href="#">Цепь привода
+		эектростарстера DELTA
+		ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item3.jpg" width="96" height="96"> 
+			<a href="#">Сцепление DELTA<br>
+		ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item3.jpg" width="96" height="96"> 
+			<a href="#">Сцепление DELTA<br>
+		ALPHA</a>
+			</li>
+			<li>
+			<img src="images/item3.jpg" width="96" height="96"> 
+			<a href="#">Сцепление DELTA<br>
+		ALPHA</a>
+			</li>
+			</ul>
+			<a id="prev_btn" class="prev" href="#"> </a>
+			<a id="next_btn" class="next" href="#"> </a>
+  </div>
+<div class="clear"></div>
+  
+
+</div>
+
+<div class="container">
+ 
+	  <img src="images/logo2.jpg" class="smalllogo"/>
+	  <div class="copyr">Copyright © 1995-2013 Virz. All right reserved.</div>
+  
+</div>
+</body>
+</html>
